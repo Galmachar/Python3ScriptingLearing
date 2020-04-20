@@ -17,7 +17,10 @@ def r_u_fat(bmi):
     else:
         return "u normal"
 def main():
-    values=gather_info()
-    bmi = round(calculate_bmi(values[0],values[1]) * 10000, 2)
+    #unpacking tuple
+    weight, height = gather_info()
+    #values=gather_info()
+    #bmi = round(calculate_bmi(values[0],values[1]) * 10000, 2)
+    bmi = round(calculate_bmi(weight,height) * 10000, 2)
     print(f"your bmi is {bmi} and " + r_u_fat(bmi))
 main()
