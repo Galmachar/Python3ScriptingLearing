@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import argparse
-
+import sys
 # build the parser
 
 parser = argparse.ArgumentParser(description='Reads a file in reverse')
@@ -15,6 +15,8 @@ try:
 except FileNotFoundError as err:
     print(f"Error: {err}")
     # we can use just except: to handle any error 
+    sys.exit(1) 
+    #echo $? to print last exit status
 else:
     with f:
         lines = f.readlines()
