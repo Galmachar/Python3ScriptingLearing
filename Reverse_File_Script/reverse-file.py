@@ -14,6 +14,7 @@ try:
     limit = args.limit
 except FileNotFoundError as err:
     print(f"Error: {err}")
+    # we can use just except: to handle any error 
 else:
     with f:
         lines = f.readlines()
